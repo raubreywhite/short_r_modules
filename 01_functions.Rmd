@@ -1,0 +1,234 @@
+---
+title: "01 Functions"
+author: "Richard White"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    df_print: paged
+    code_download: TRUE
+---
+
+## Base R
+
+Functions are a recipe/template that can be reused multiple times. Base R already comes with a number of pre-packaged functions. The most simple functions are the mathematical functions.
+
+`+` is a function that takes two values (`arguments`) and adds them together:
+```{r}
+1+2
+```
+
+`-` is a function that takes two arguments and subtracts them:
+```{r}
+3-2
+```
+
+`*` is a function that takes two arguments and multiplies them:
+```{r}
+4*4
+```
+
+`/` is a function that takes two arguments and divides them:
+```{r}
+8/2
+```
+
+These four functions are special because of how they look. i.e. `argument function argument` (e.g. `3 + 4`). In most situations, functions will look like `function()` or `function(argument1)` or `function(argument1, argument2)` or `function(argument1, argument2, argument3)` and so on, depending on how many arguments your function will take.
+
+## Simple Addition
+
+As a simple example, we will now write our own function that takes two numbers as arguments and adds them together. Basically, we are writing a function that performs the same as the `+` function.
+
+```{r}
+Addition <- function(argument1, argument2){
+  retVal <- argument1 + argument2
+  
+  return(retVal)
+}
+
+Addition(3,5)
+```
+
+You can see that `Addition(3,5)` is in the format `function(argument1, argument2)`, which is the standard function format that you will be creating in R.
+
+Now that we have created our `Addition` function, we can reuse this function for multiple arguments.
+
+```{r}
+Addition(2,3)
+```
+
+```{r}
+Addition(21,3323)
+```
+
+```{r}
+Addition(2231,331223)
+```
+
+We can also create a function that adds three numbers together:
+
+```{r}
+Addition3 <- function(argument1, argument2, argument3){
+  retVal <- argument1 + argument2 + argument3
+  
+  return(retVal)
+}
+
+Addition3(3,5,7)
+```
+
+### Example
+
+Try to create a function that adds four numbers together
+
+```{r}
+# YOUR FUNCTION GOES HERE
+```
+
+## Adding prespecified values
+
+We can make the internal mechanisms of the functions more complicated. For example, we could have a function that takes one argument, adds 4 to it, and then returns that value:
+
+```{r}
+Add4ToValue <- function(argument){
+  retVal <- argument + 4
+  
+  return(retVal)
+}
+
+Add4ToValue(3)
+```
+
+We can also reuse the function `Addition` that we created earlier:
+
+```{r}
+Add4ToValue <- function(argument){
+  retVal <- Addition(argument, 4)
+  
+  return(retVal)
+}
+
+Add4ToValue(3)
+```
+
+### Example
+
+Try to create a function that:
+
+- Takes a number as an argument
+- Doubles that number (i.e. multiplies it by two)
+- Returns the doubled value
+
+```{r}
+# YOUR FUNCTION GOES HERE
+```
+
+## Asking questions
+
+Your functions can also be used to ask questions. The most commonly used questioning function in base R is `is.na()`. This function asks if the argument is equal to `NA`.
+
+```{r}
+is.na(NA)
+```
+
+```{r}
+is.na(3)
+```
+
+```{r}
+is.na("hello")
+```
+
+We can make a similar function that asks if the argument is positive (i.e. greater than zero):
+
+```{r}
+IsPositive <- function(argument){
+  if(argument>0){
+    return(TRUE)
+  } else {
+    return(FALSE)
+  }
+}
+```
+
+```{r}
+IsPositive(2)
+```
+
+```{r}
+IsPositive(-2)
+```
+
+```{r}
+IsPositive(0)
+```
+
+### Example
+
+Try to create a function that:
+
+- Takes a number as an argument
+- Returns `TRUE` if the argument is greater than or equal to 10
+- Returns `FALSE` otherwise
+
+```{r}
+# YOUR FUNCTION GOES HERE
+```
+
+### Example
+
+Try to create a function that:
+
+- Takes a vector (e.g. `c(1,2,3,4)`) as an argument
+- Returns `TRUE` if the vector is longer than 5 elements
+- Returns `FALSE` otherwise
+
+Hints:
+
+- Use the function `length()`
+
+```{r}
+# YOUR FUNCTION GOES HERE
+```
+
+## Selecting Parts Of Your Data
+
+Functions can also be used to return parts of your data. For example, we could create a function that only returns the positive values from a vector:
+
+```{r}
+PositiveValues <- function(argument){
+  retVal <- argument[argument>0]
+  
+  return(retVal)
+}
+
+PositiveValues(argument=c(-2,3,-4,6))
+```
+
+These returned values can be assigned to new variables and used further in your code:
+
+```{r}
+myReturnedValues <- PositiveValues(argument=c(-2,3,-4,6))
+
+print(myReturnedValues*10)
+```
+
+
+### Example
+
+Try to create a function that:
+
+- Takes a vector (e.g. `c(,1,2,3,4)`) as an argument
+- Returns the number of positive values
+
+Hints:
+
+- Use the function `length()`
+
+```{r}
+# YOUR FUNCTION GOES HERE
+```
+
+
+
+
+
