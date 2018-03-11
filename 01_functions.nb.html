@@ -219,59 +219,48 @@ $(document).ready(function () {
 <p>As a simple example, we will now write our own function that takes two numbers as arguments and adds them together. Basically, we are writing a function that performs the same as the <code>+</code> function.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWRkaXRpb24gPC0gZnVuY3Rpb24oYXJndW1lbnQxLCBhcmd1bWVudDIpe1xuICByZXRWYWwgPC0gYXJndW1lbnQxICsgYXJndW1lbnQyXG4gIFxuICByZXR1cm4ocmV0VmFsKVxufVxuYWRkaXRpb24oMyw1KVxuYGBgIn0= -->
-<pre class="r"><code>addition &lt;- function(argument1, argument2){
-  retVal &lt;- argument1 + argument2
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuQWRkaXRpb24gPC0gZnVuY3Rpb24oYXJndW1lbnQxLCBhcmd1bWVudDIpe1xuICByZXR2YWwgPC0gYXJndW1lbnQxICsgYXJndW1lbnQyXG4gIFxuICByZXR1cm4ocmV0dmFsKVxufVxuXG5BZGRpdGlvbigzLDUpXG5gYGAifQ== -->
+<pre class="r"><code>Addition &lt;- function(argument1, argument2){
+  retval &lt;- argument1 + argument2
   
-  return(retVal)
+  return(retval)
 }
-addition(3,5)</code></pre>
+
+Addition(3,5)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDhcbiJ9 -->
-<pre><code>[1] 8</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>You can see that <code>Addition(3,5)</code> is in the format <code>function(argument1, argument2)</code>, which is the standard function format that you will be creating in R.</p>
 <p>Now that we have created our <code>Addition</code> function, we can reuse this function for multiple arguments.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWRkaXRpb24oMiwzKVxuYGBgIn0= -->
-<pre class="r"><code>addition(2,3)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuQWRkaXRpb24oMiwzKVxuYGBgIn0= -->
+<pre class="r"><code>Addition(2,3)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDVcbiJ9 -->
-<pre><code>[1] 5</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWRkaXRpb24oMjEsMzMyMylcbmBgYCJ9 -->
-<pre class="r"><code>addition(21,3323)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuQWRkaXRpb24oMjEsMzMyMylcbmBgYCJ9 -->
+<pre class="r"><code>Addition(21,3323)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDMzNDRcbiJ9 -->
-<pre><code>[1] 3344</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWRkaXRpb24oMjIzMSwzMzEyMjMpXG5gYGAifQ== -->
-<pre class="r"><code>addition(2231,331223)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuQWRkaXRpb24oMjIzMSwzMzEyMjMpXG5gYGAifQ== -->
+<pre class="r"><code>Addition(2231,331223)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDMzMzQ1NFxuIn0= -->
-<pre><code>[1] 333454</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>We can also create a function that adds three numbers together:</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuQWRkaXRpb24zIDwtIGZ1bmN0aW9uKGFyZ3VtZW50MSwgYXJndW1lbnQyLCBhcmd1bWVudDMpe1xuICByZXRWYWwgPC0gYXJndW1lbnQxICsgYXJndW1lbnQyICsgYXJndW1lbnQzXG4gIFxuICByZXR1cm4ocmV0VmFsKVxufVxuXG5BZGRpdGlvbjMoMyw1LDcpXG5gYGAifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuQWRkaXRpb24zIDwtIGZ1bmN0aW9uKGFyZ3VtZW50MSwgYXJndW1lbnQyLCBhcmd1bWVudDMpe1xuICByZXR2YWwgPC0gYXJndW1lbnQxICsgYXJndW1lbnQyICsgYXJndW1lbnQzXG4gIFxuICByZXR1cm4ocmV0dmFsKVxufVxuXG5BZGRpdGlvbjMoMyw1LDcpXG5gYGAifQ== -->
 <pre class="r"><code>Addition3 &lt;- function(argument1, argument2, argument3){
-  retVal &lt;- argument1 + argument2 + argument3
+  retval &lt;- argument1 + argument2 + argument3
   
-  return(retVal)
+  return(retval)
 }
 
 Addition3(3,5,7)</code></pre>
@@ -295,11 +284,11 @@ Addition3(3,5,7)</code></pre>
 <p>We can make the internal mechanisms of the functions more complicated. For example, we could have a function that takes one argument, adds 4 to it, and then returns that value:</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuQWRkNFRvVmFsdWUgPC0gZnVuY3Rpb24oYXJndW1lbnQpe1xuICByZXRWYWwgPC0gYXJndW1lbnQgKyA0XG4gIFxuICByZXR1cm4ocmV0VmFsKVxufVxuXG5BZGQ0VG9WYWx1ZSgzKVxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuQWRkNFRvVmFsdWUgPC0gZnVuY3Rpb24oYXJndW1lbnQpe1xuICByZXR2YWwgPC0gYXJndW1lbnQgKyA0XG4gIFxuICByZXR1cm4ocmV0dmFsKVxufVxuXG5BZGQ0VG9WYWx1ZSgzKVxuYGBgIn0= -->
 <pre class="r"><code>Add4ToValue &lt;- function(argument){
-  retVal &lt;- argument + 4
+  retval &lt;- argument + 4
   
-  return(retVal)
+  return(retval)
 }
 
 Add4ToValue(3)</code></pre>
@@ -309,11 +298,11 @@ Add4ToValue(3)</code></pre>
 <p>We can also reuse the function <code>Addition</code> that we created earlier:</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuQWRkNFRvVmFsdWUgPC0gZnVuY3Rpb24oYXJndW1lbnQpe1xuICByZXRWYWwgPC0gQWRkaXRpb24oYXJndW1lbnQsIDQpXG4gIFxuICByZXR1cm4ocmV0VmFsKVxufVxuXG5BZGQ0VG9WYWx1ZSgzKVxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuQWRkNFRvVmFsdWUgPC0gZnVuY3Rpb24oYXJndW1lbnQpe1xuICByZXR2YWwgPC0gQWRkaXRpb24oYXJndW1lbnQsIDQpXG4gIFxuICByZXR1cm4ocmV0dmFsKVxufVxuXG5BZGQ0VG9WYWx1ZSgzKVxuYGBgIn0= -->
 <pre class="r"><code>Add4ToValue &lt;- function(argument){
-  retVal &lt;- Addition(argument, 4)
+  retval &lt;- Addition(argument, 4)
   
-  return(retVal)
+  return(retval)
 }
 
 Add4ToValue(3)</code></pre>
@@ -345,9 +334,6 @@ Add4ToValue(3)</code></pre>
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaXMubmEoTkEpXG5gYGAifQ== -->
 <pre class="r"><code>is.na(NA)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFRSVUVcbiJ9 -->
-<pre><code>[1] TRUE</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
@@ -355,9 +341,6 @@ Add4ToValue(3)</code></pre>
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaXMubmEoMylcbmBgYCJ9 -->
 <pre class="r"><code>is.na(3)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIEZBTFNFXG4ifQ== -->
-<pre><code>[1] FALSE</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
@@ -365,9 +348,6 @@ Add4ToValue(3)</code></pre>
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaXMubmEoXCJoZWxsb1wiKVxuYGBgIn0= -->
 <pre class="r"><code>is.na(&quot;hello&quot;)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIEZBTFNFXG4ifQ== -->
-<pre><code>[1] FALSE</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>We can make a similar function that asks if the argument is positive (i.e. greater than zero):</p>
@@ -389,9 +369,6 @@ Add4ToValue(3)</code></pre>
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuSXNQb3NpdGl2ZSgyKVxuYGBgIn0= -->
 <pre class="r"><code>IsPositive(2)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFRSVUVcbiJ9 -->
-<pre><code>[1] TRUE</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
@@ -399,9 +376,6 @@ Add4ToValue(3)</code></pre>
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuSXNQb3NpdGl2ZSgtMilcbmBgYCJ9 -->
 <pre class="r"><code>IsPositive(-2)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIEZBTFNFXG4ifQ== -->
-<pre><code>[1] FALSE</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
@@ -453,29 +427,25 @@ Add4ToValue(3)</code></pre>
 <p>Functions can also be used to return parts of your data. For example, we could create a function that only returns the positive values from a vector:</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuUG9zaXRpdmVWYWx1ZXMgPC0gZnVuY3Rpb24oYXJndW1lbnQpe1xuICByZXRWYWwgPC0gYXJndW1lbnRbYXJndW1lbnQ+MF1cbiAgXG4gIHJldHVybihyZXRWYWwpXG59XG5Qb3NpdGl2ZVZhbHVlcyhhcmd1bWVudD1jKC0yLDMsLTQsNikpXG5gYGAifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuUG9zaXRpdmVWYWx1ZXMgPC0gZnVuY3Rpb24oYXJndW1lbnQpe1xuICByZXR2YWwgPC0gYXJndW1lbnRbYXJndW1lbnQ+MF1cbiAgXG4gIHJldHVybihyZXR2YWwpXG59XG5cblBvc2l0aXZlVmFsdWVzKGFyZ3VtZW50PWMoLTIsMywtNCw2KSlcbmBgYCJ9 -->
 <pre class="r"><code>PositiveValues &lt;- function(argument){
-  retVal &lt;- argument[argument&gt;0]
+  retval &lt;- argument[argument&gt;0]
   
-  return(retVal)
+  return(retval)
 }
+
 PositiveValues(argument=c(-2,3,-4,6))</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDMgNlxuIn0= -->
-<pre><code>[1] 3 6</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>These returned values can be assigned to new variables and used further in your code:</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubXlSZXR1cm5lZFZhbHVlcyA8LSBQb3NpdGl2ZVZhbHVlcyhhcmd1bWVudD1jKC0yLDMsLTQsNikpXG5wcmludChteVJldHVybmVkVmFsdWVzKjEwKVxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubXlSZXR1cm5lZFZhbHVlcyA8LSBQb3NpdGl2ZVZhbHVlcyhhcmd1bWVudD1jKC0yLDMsLTQsNikpXG5cbnByaW50KG15UmV0dXJuZWRWYWx1ZXMqMTApXG5gYGAifQ== -->
 <pre class="r"><code>myReturnedValues &lt;- PositiveValues(argument=c(-2,3,-4,6))
+
 print(myReturnedValues*10)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDMwIDYwXG4ifQ== -->
-<pre><code>[1] 30 60</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <div id="example-4" class="section level3">
@@ -500,7 +470,7 @@ print(myReturnedValues*10)</code></pre>
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiMDEgRnVuY3Rpb25zIgphdXRob3I6ICJSaWNoYXJkIFdoaXRlIgpkYXRlOiAiYHIgU3lzLkRhdGUoKWAiCm91dHB1dDoKICBodG1sX2RvY3VtZW50OgogICAgZGZfcHJpbnQ6IHBhZ2VkCiAgICBjb2RlX2Rvd25sb2FkOiBUUlVFCi0tLQoKIyMgQmFzZSBSCgpGdW5jdGlvbnMgYXJlIGEgcmVjaXBlL3RlbXBsYXRlIHRoYXQgY2FuIGJlIHJldXNlZCBtdWx0aXBsZSB0aW1lcy4gQmFzZSBSIGFscmVhZHkgY29tZXMgd2l0aCBhIG51bWJlciBvZiBwcmUtcGFja2FnZWQgZnVuY3Rpb25zLiBUaGUgbW9zdCBzaW1wbGUgZnVuY3Rpb25zIGFyZSB0aGUgbWF0aGVtYXRpY2FsIGZ1bmN0aW9ucy4KCmArYCBpcyBhIGZ1bmN0aW9uIHRoYXQgdGFrZXMgdHdvIHZhbHVlcyAoYGFyZ3VtZW50c2ApIGFuZCBhZGRzIHRoZW0gdG9nZXRoZXI6CmBgYHtyfQoxKzIKYGBgCgpgLWAgaXMgYSBmdW5jdGlvbiB0aGF0IHRha2VzIHR3byBhcmd1bWVudHMgYW5kIHN1YnRyYWN0cyB0aGVtOgpgYGB7cn0KMy0yCmBgYAoKYCpgIGlzIGEgZnVuY3Rpb24gdGhhdCB0YWtlcyB0d28gYXJndW1lbnRzIGFuZCBtdWx0aXBsaWVzIHRoZW06CmBgYHtyfQo0KjQKYGBgCgpgL2AgaXMgYSBmdW5jdGlvbiB0aGF0IHRha2VzIHR3byBhcmd1bWVudHMgYW5kIGRpdmlkZXMgdGhlbToKYGBge3J9CjgvMgpgYGAKClRoZXNlIGZvdXIgZnVuY3Rpb25zIGFyZSBzcGVjaWFsIGJlY2F1c2Ugb2YgaG93IHRoZXkgbG9vay4gaS5lLiBgYXJndW1lbnQgZnVuY3Rpb24gYXJndW1lbnRgIChlLmcuIGAzICsgNGApLiBJbiBtb3N0IHNpdHVhdGlvbnMsIGZ1bmN0aW9ucyB3aWxsIGxvb2sgbGlrZSBgZnVuY3Rpb24oKWAgb3IgYGZ1bmN0aW9uKGFyZ3VtZW50MSlgIG9yIGBmdW5jdGlvbihhcmd1bWVudDEsIGFyZ3VtZW50MilgIG9yIGBmdW5jdGlvbihhcmd1bWVudDEsIGFyZ3VtZW50MiwgYXJndW1lbnQzKWAgYW5kIHNvIG9uLCBkZXBlbmRpbmcgb24gaG93IG1hbnkgYXJndW1lbnRzIHlvdXIgZnVuY3Rpb24gd2lsbCB0YWtlLgoKIyMgU2ltcGxlIEFkZGl0aW9uCgpBcyBhIHNpbXBsZSBleGFtcGxlLCB3ZSB3aWxsIG5vdyB3cml0ZSBvdXIgb3duIGZ1bmN0aW9uIHRoYXQgdGFrZXMgdHdvIG51bWJlcnMgYXMgYXJndW1lbnRzIGFuZCBhZGRzIHRoZW0gdG9nZXRoZXIuIEJhc2ljYWxseSwgd2UgYXJlIHdyaXRpbmcgYSBmdW5jdGlvbiB0aGF0IHBlcmZvcm1zIHRoZSBzYW1lIGFzIHRoZSBgK2AgZnVuY3Rpb24uCgpgYGB7cn0KQWRkaXRpb24gPC0gZnVuY3Rpb24oYXJndW1lbnQxLCBhcmd1bWVudDIpewogIHJldFZhbCA8LSBhcmd1bWVudDEgKyBhcmd1bWVudDIKICAKICByZXR1cm4ocmV0VmFsKQp9CgpBZGRpdGlvbigzLDUpCmBgYAoKWW91IGNhbiBzZWUgdGhhdCBgQWRkaXRpb24oMyw1KWAgaXMgaW4gdGhlIGZvcm1hdCBgZnVuY3Rpb24oYXJndW1lbnQxLCBhcmd1bWVudDIpYCwgd2hpY2ggaXMgdGhlIHN0YW5kYXJkIGZ1bmN0aW9uIGZvcm1hdCB0aGF0IHlvdSB3aWxsIGJlIGNyZWF0aW5nIGluIFIuCgpOb3cgdGhhdCB3ZSBoYXZlIGNyZWF0ZWQgb3VyIGBBZGRpdGlvbmAgZnVuY3Rpb24sIHdlIGNhbiByZXVzZSB0aGlzIGZ1bmN0aW9uIGZvciBtdWx0aXBsZSBhcmd1bWVudHMuCgpgYGB7cn0KQWRkaXRpb24oMiwzKQpgYGAKCmBgYHtyfQpBZGRpdGlvbigyMSwzMzIzKQpgYGAKCmBgYHtyfQpBZGRpdGlvbigyMjMxLDMzMTIyMykKYGBgCgpXZSBjYW4gYWxzbyBjcmVhdGUgYSBmdW5jdGlvbiB0aGF0IGFkZHMgdGhyZWUgbnVtYmVycyB0b2dldGhlcjoKCmBgYHtyfQpBZGRpdGlvbjMgPC0gZnVuY3Rpb24oYXJndW1lbnQxLCBhcmd1bWVudDIsIGFyZ3VtZW50Myl7CiAgcmV0VmFsIDwtIGFyZ3VtZW50MSArIGFyZ3VtZW50MiArIGFyZ3VtZW50MwogIAogIHJldHVybihyZXRWYWwpCn0KCkFkZGl0aW9uMygzLDUsNykKYGBgCgojIyMgRXhhbXBsZQoKVHJ5IHRvIGNyZWF0ZSBhIGZ1bmN0aW9uIHRoYXQgYWRkcyBmb3VyIG51bWJlcnMgdG9nZXRoZXIKCmBgYHtyfQojIFlPVVIgRlVOQ1RJT04gR09FUyBIRVJFCmBgYAoKIyMgQWRkaW5nIHByZXNwZWNpZmllZCB2YWx1ZXMKCldlIGNhbiBtYWtlIHRoZSBpbnRlcm5hbCBtZWNoYW5pc21zIG9mIHRoZSBmdW5jdGlvbnMgbW9yZSBjb21wbGljYXRlZC4gRm9yIGV4YW1wbGUsIHdlIGNvdWxkIGhhdmUgYSBmdW5jdGlvbiB0aGF0IHRha2VzIG9uZSBhcmd1bWVudCwgYWRkcyA0IHRvIGl0LCBhbmQgdGhlbiByZXR1cm5zIHRoYXQgdmFsdWU6CgpgYGB7cn0KQWRkNFRvVmFsdWUgPC0gZnVuY3Rpb24oYXJndW1lbnQpewogIHJldFZhbCA8LSBhcmd1bWVudCArIDQKICAKICByZXR1cm4ocmV0VmFsKQp9CgpBZGQ0VG9WYWx1ZSgzKQpgYGAKCldlIGNhbiBhbHNvIHJldXNlIHRoZSBmdW5jdGlvbiBgQWRkaXRpb25gIHRoYXQgd2UgY3JlYXRlZCBlYXJsaWVyOgoKYGBge3J9CkFkZDRUb1ZhbHVlIDwtIGZ1bmN0aW9uKGFyZ3VtZW50KXsKICByZXRWYWwgPC0gQWRkaXRpb24oYXJndW1lbnQsIDQpCiAgCiAgcmV0dXJuKHJldFZhbCkKfQoKQWRkNFRvVmFsdWUoMykKYGBgCgojIyMgRXhhbXBsZQoKVHJ5IHRvIGNyZWF0ZSBhIGZ1bmN0aW9uIHRoYXQ6CgotIFRha2VzIGEgbnVtYmVyIGFzIGFuIGFyZ3VtZW50Ci0gRG91YmxlcyB0aGF0IG51bWJlciAoaS5lLiBtdWx0aXBsaWVzIGl0IGJ5IHR3bykKLSBSZXR1cm5zIHRoZSBkb3VibGVkIHZhbHVlCgpgYGB7cn0KIyBZT1VSIEZVTkNUSU9OIEdPRVMgSEVSRQpgYGAKCiMjIEFza2luZyBxdWVzdGlvbnMKCllvdXIgZnVuY3Rpb25zIGNhbiBhbHNvIGJlIHVzZWQgdG8gYXNrIHF1ZXN0aW9ucy4gVGhlIG1vc3QgY29tbW9ubHkgdXNlZCBxdWVzdGlvbmluZyBmdW5jdGlvbiBpbiBiYXNlIFIgaXMgYGlzLm5hKClgLiBUaGlzIGZ1bmN0aW9uIGFza3MgaWYgdGhlIGFyZ3VtZW50IGlzIGVxdWFsIHRvIGBOQWAuCgpgYGB7cn0KaXMubmEoTkEpCmBgYAoKYGBge3J9CmlzLm5hKDMpCmBgYAoKYGBge3J9CmlzLm5hKCJoZWxsbyIpCmBgYAoKV2UgY2FuIG1ha2UgYSBzaW1pbGFyIGZ1bmN0aW9uIHRoYXQgYXNrcyBpZiB0aGUgYXJndW1lbnQgaXMgcG9zaXRpdmUgKGkuZS4gZ3JlYXRlciB0aGFuIHplcm8pOgoKYGBge3J9CklzUG9zaXRpdmUgPC0gZnVuY3Rpb24oYXJndW1lbnQpewogIGlmKGFyZ3VtZW50PjApewogICAgcmV0dXJuKFRSVUUpCiAgfSBlbHNlIHsKICAgIHJldHVybihGQUxTRSkKICB9Cn0KYGBgCgpgYGB7cn0KSXNQb3NpdGl2ZSgyKQpgYGAKCmBgYHtyfQpJc1Bvc2l0aXZlKC0yKQpgYGAKCmBgYHtyfQpJc1Bvc2l0aXZlKDApCmBgYAoKIyMjIEV4YW1wbGUKClRyeSB0byBjcmVhdGUgYSBmdW5jdGlvbiB0aGF0OgoKLSBUYWtlcyBhIG51bWJlciBhcyBhbiBhcmd1bWVudAotIFJldHVybnMgYFRSVUVgIGlmIHRoZSBhcmd1bWVudCBpcyBncmVhdGVyIHRoYW4gb3IgZXF1YWwgdG8gMTAKLSBSZXR1cm5zIGBGQUxTRWAgb3RoZXJ3aXNlCgpgYGB7cn0KIyBZT1VSIEZVTkNUSU9OIEdPRVMgSEVSRQpgYGAKCiMjIyBFeGFtcGxlCgpUcnkgdG8gY3JlYXRlIGEgZnVuY3Rpb24gdGhhdDoKCi0gVGFrZXMgYSB2ZWN0b3IgKGUuZy4gYGMoMSwyLDMsNClgKSBhcyBhbiBhcmd1bWVudAotIFJldHVybnMgYFRSVUVgIGlmIHRoZSB2ZWN0b3IgaXMgbG9uZ2VyIHRoYW4gNSBlbGVtZW50cwotIFJldHVybnMgYEZBTFNFYCBvdGhlcndpc2UKCkhpbnRzOgoKLSBVc2UgdGhlIGZ1bmN0aW9uIGBsZW5ndGgoKWAKCmBgYHtyfQojIFlPVVIgRlVOQ1RJT04gR09FUyBIRVJFCmBgYAoKIyMgU2VsZWN0aW5nIFBhcnRzIE9mIFlvdXIgRGF0YQoKRnVuY3Rpb25zIGNhbiBhbHNvIGJlIHVzZWQgdG8gcmV0dXJuIHBhcnRzIG9mIHlvdXIgZGF0YS4gRm9yIGV4YW1wbGUsIHdlIGNvdWxkIGNyZWF0ZSBhIGZ1bmN0aW9uIHRoYXQgb25seSByZXR1cm5zIHRoZSBwb3NpdGl2ZSB2YWx1ZXMgZnJvbSBhIHZlY3RvcjoKCmBgYHtyfQpQb3NpdGl2ZVZhbHVlcyA8LSBmdW5jdGlvbihhcmd1bWVudCl7CiAgcmV0VmFsIDwtIGFyZ3VtZW50W2FyZ3VtZW50PjBdCiAgCiAgcmV0dXJuKHJldFZhbCkKfQoKUG9zaXRpdmVWYWx1ZXMoYXJndW1lbnQ9YygtMiwzLC00LDYpKQpgYGAKClRoZXNlIHJldHVybmVkIHZhbHVlcyBjYW4gYmUgYXNzaWduZWQgdG8gbmV3IHZhcmlhYmxlcyBhbmQgdXNlZCBmdXJ0aGVyIGluIHlvdXIgY29kZToKCmBgYHtyfQpteVJldHVybmVkVmFsdWVzIDwtIFBvc2l0aXZlVmFsdWVzKGFyZ3VtZW50PWMoLTIsMywtNCw2KSkKCnByaW50KG15UmV0dXJuZWRWYWx1ZXMqMTApCmBgYAoKCiMjIyBFeGFtcGxlCgpUcnkgdG8gY3JlYXRlIGEgZnVuY3Rpb24gdGhhdDoKCi0gVGFrZXMgYSB2ZWN0b3IgKGUuZy4gYGMoLDEsMiwzLDQpYCkgYXMgYW4gYXJndW1lbnQKLSBSZXR1cm5zIHRoZSBudW1iZXIgb2YgcG9zaXRpdmUgdmFsdWVzCgpIaW50czoKCi0gVXNlIHRoZSBmdW5jdGlvbiBgbGVuZ3RoKClgCgpgYGB7cn0KIyBZT1VSIEZVTkNUSU9OIEdPRVMgSEVSRQpgYGAKCgoKCgo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiMDEgRnVuY3Rpb25zIgphdXRob3I6ICJSaWNoYXJkIFdoaXRlIgpkYXRlOiAiYHIgU3lzLkRhdGUoKWAiCm91dHB1dDoKICBodG1sX2RvY3VtZW50OgogICAgZGZfcHJpbnQ6IHBhZ2VkCiAgICBjb2RlX2Rvd25sb2FkOiBUUlVFCi0tLQoKIyMgQmFzZSBSCgpGdW5jdGlvbnMgYXJlIGEgcmVjaXBlL3RlbXBsYXRlIHRoYXQgY2FuIGJlIHJldXNlZCBtdWx0aXBsZSB0aW1lcy4gQmFzZSBSIGFscmVhZHkgY29tZXMgd2l0aCBhIG51bWJlciBvZiBwcmUtcGFja2FnZWQgZnVuY3Rpb25zLiBUaGUgbW9zdCBzaW1wbGUgZnVuY3Rpb25zIGFyZSB0aGUgbWF0aGVtYXRpY2FsIGZ1bmN0aW9ucy4KCmArYCBpcyBhIGZ1bmN0aW9uIHRoYXQgdGFrZXMgdHdvIHZhbHVlcyAoYGFyZ3VtZW50c2ApIGFuZCBhZGRzIHRoZW0gdG9nZXRoZXI6CmBgYHtyfQoxKzIKYGBgCgpgLWAgaXMgYSBmdW5jdGlvbiB0aGF0IHRha2VzIHR3byBhcmd1bWVudHMgYW5kIHN1YnRyYWN0cyB0aGVtOgpgYGB7cn0KMy0yCmBgYAoKYCpgIGlzIGEgZnVuY3Rpb24gdGhhdCB0YWtlcyB0d28gYXJndW1lbnRzIGFuZCBtdWx0aXBsaWVzIHRoZW06CmBgYHtyfQo0KjQKYGBgCgpgL2AgaXMgYSBmdW5jdGlvbiB0aGF0IHRha2VzIHR3byBhcmd1bWVudHMgYW5kIGRpdmlkZXMgdGhlbToKYGBge3J9CjgvMgpgYGAKClRoZXNlIGZvdXIgZnVuY3Rpb25zIGFyZSBzcGVjaWFsIGJlY2F1c2Ugb2YgaG93IHRoZXkgbG9vay4gaS5lLiBgYXJndW1lbnQgZnVuY3Rpb24gYXJndW1lbnRgIChlLmcuIGAzICsgNGApLiBJbiBtb3N0IHNpdHVhdGlvbnMsIGZ1bmN0aW9ucyB3aWxsIGxvb2sgbGlrZSBgZnVuY3Rpb24oKWAgb3IgYGZ1bmN0aW9uKGFyZ3VtZW50MSlgIG9yIGBmdW5jdGlvbihhcmd1bWVudDEsIGFyZ3VtZW50MilgIG9yIGBmdW5jdGlvbihhcmd1bWVudDEsIGFyZ3VtZW50MiwgYXJndW1lbnQzKWAgYW5kIHNvIG9uLCBkZXBlbmRpbmcgb24gaG93IG1hbnkgYXJndW1lbnRzIHlvdXIgZnVuY3Rpb24gd2lsbCB0YWtlLgoKIyMgU2ltcGxlIEFkZGl0aW9uCgpBcyBhIHNpbXBsZSBleGFtcGxlLCB3ZSB3aWxsIG5vdyB3cml0ZSBvdXIgb3duIGZ1bmN0aW9uIHRoYXQgdGFrZXMgdHdvIG51bWJlcnMgYXMgYXJndW1lbnRzIGFuZCBhZGRzIHRoZW0gdG9nZXRoZXIuIEJhc2ljYWxseSwgd2UgYXJlIHdyaXRpbmcgYSBmdW5jdGlvbiB0aGF0IHBlcmZvcm1zIHRoZSBzYW1lIGFzIHRoZSBgK2AgZnVuY3Rpb24uCgpgYGB7cn0KQWRkaXRpb24gPC0gZnVuY3Rpb24oYXJndW1lbnQxLCBhcmd1bWVudDIpewogIHJldHZhbCA8LSBhcmd1bWVudDEgKyBhcmd1bWVudDIKICAKICByZXR1cm4ocmV0dmFsKQp9CgpBZGRpdGlvbigzLDUpCmBgYAoKWW91IGNhbiBzZWUgdGhhdCBgQWRkaXRpb24oMyw1KWAgaXMgaW4gdGhlIGZvcm1hdCBgZnVuY3Rpb24oYXJndW1lbnQxLCBhcmd1bWVudDIpYCwgd2hpY2ggaXMgdGhlIHN0YW5kYXJkIGZ1bmN0aW9uIGZvcm1hdCB0aGF0IHlvdSB3aWxsIGJlIGNyZWF0aW5nIGluIFIuCgpOb3cgdGhhdCB3ZSBoYXZlIGNyZWF0ZWQgb3VyIGBBZGRpdGlvbmAgZnVuY3Rpb24sIHdlIGNhbiByZXVzZSB0aGlzIGZ1bmN0aW9uIGZvciBtdWx0aXBsZSBhcmd1bWVudHMuCgpgYGB7cn0KQWRkaXRpb24oMiwzKQpgYGAKCmBgYHtyfQpBZGRpdGlvbigyMSwzMzIzKQpgYGAKCmBgYHtyfQpBZGRpdGlvbigyMjMxLDMzMTIyMykKYGBgCgpXZSBjYW4gYWxzbyBjcmVhdGUgYSBmdW5jdGlvbiB0aGF0IGFkZHMgdGhyZWUgbnVtYmVycyB0b2dldGhlcjoKCmBgYHtyfQpBZGRpdGlvbjMgPC0gZnVuY3Rpb24oYXJndW1lbnQxLCBhcmd1bWVudDIsIGFyZ3VtZW50Myl7CiAgcmV0dmFsIDwtIGFyZ3VtZW50MSArIGFyZ3VtZW50MiArIGFyZ3VtZW50MwogIAogIHJldHVybihyZXR2YWwpCn0KCkFkZGl0aW9uMygzLDUsNykKYGBgCgojIyMgRXhhbXBsZQoKVHJ5IHRvIGNyZWF0ZSBhIGZ1bmN0aW9uIHRoYXQgYWRkcyBmb3VyIG51bWJlcnMgdG9nZXRoZXIKCmBgYHtyfQojIFlPVVIgRlVOQ1RJT04gR09FUyBIRVJFCmBgYAoKIyMgQWRkaW5nIHByZXNwZWNpZmllZCB2YWx1ZXMKCldlIGNhbiBtYWtlIHRoZSBpbnRlcm5hbCBtZWNoYW5pc21zIG9mIHRoZSBmdW5jdGlvbnMgbW9yZSBjb21wbGljYXRlZC4gRm9yIGV4YW1wbGUsIHdlIGNvdWxkIGhhdmUgYSBmdW5jdGlvbiB0aGF0IHRha2VzIG9uZSBhcmd1bWVudCwgYWRkcyA0IHRvIGl0LCBhbmQgdGhlbiByZXR1cm5zIHRoYXQgdmFsdWU6CgpgYGB7cn0KQWRkNFRvVmFsdWUgPC0gZnVuY3Rpb24oYXJndW1lbnQpewogIHJldHZhbCA8LSBhcmd1bWVudCArIDQKICAKICByZXR1cm4ocmV0dmFsKQp9CgpBZGQ0VG9WYWx1ZSgzKQpgYGAKCldlIGNhbiBhbHNvIHJldXNlIHRoZSBmdW5jdGlvbiBgQWRkaXRpb25gIHRoYXQgd2UgY3JlYXRlZCBlYXJsaWVyOgoKYGBge3J9CkFkZDRUb1ZhbHVlIDwtIGZ1bmN0aW9uKGFyZ3VtZW50KXsKICByZXR2YWwgPC0gQWRkaXRpb24oYXJndW1lbnQsIDQpCiAgCiAgcmV0dXJuKHJldHZhbCkKfQoKQWRkNFRvVmFsdWUoMykKYGBgCgojIyMgRXhhbXBsZQoKVHJ5IHRvIGNyZWF0ZSBhIGZ1bmN0aW9uIHRoYXQ6CgotIFRha2VzIGEgbnVtYmVyIGFzIGFuIGFyZ3VtZW50Ci0gRG91YmxlcyB0aGF0IG51bWJlciAoaS5lLiBtdWx0aXBsaWVzIGl0IGJ5IHR3bykKLSBSZXR1cm5zIHRoZSBkb3VibGVkIHZhbHVlCgpgYGB7cn0KIyBZT1VSIEZVTkNUSU9OIEdPRVMgSEVSRQpgYGAKCiMjIEFza2luZyBxdWVzdGlvbnMKCllvdXIgZnVuY3Rpb25zIGNhbiBhbHNvIGJlIHVzZWQgdG8gYXNrIHF1ZXN0aW9ucy4gVGhlIG1vc3QgY29tbW9ubHkgdXNlZCBxdWVzdGlvbmluZyBmdW5jdGlvbiBpbiBiYXNlIFIgaXMgYGlzLm5hKClgLiBUaGlzIGZ1bmN0aW9uIGFza3MgaWYgdGhlIGFyZ3VtZW50IGlzIGVxdWFsIHRvIGBOQWAuCgpgYGB7cn0KaXMubmEoTkEpCmBgYAoKYGBge3J9CmlzLm5hKDMpCmBgYAoKYGBge3J9CmlzLm5hKCJoZWxsbyIpCmBgYAoKV2UgY2FuIG1ha2UgYSBzaW1pbGFyIGZ1bmN0aW9uIHRoYXQgYXNrcyBpZiB0aGUgYXJndW1lbnQgaXMgcG9zaXRpdmUgKGkuZS4gZ3JlYXRlciB0aGFuIHplcm8pOgoKYGBge3J9CklzUG9zaXRpdmUgPC0gZnVuY3Rpb24oYXJndW1lbnQpewogIGlmKGFyZ3VtZW50PjApewogICAgcmV0dXJuKFRSVUUpCiAgfSBlbHNlIHsKICAgIHJldHVybihGQUxTRSkKICB9Cn0KYGBgCgpgYGB7cn0KSXNQb3NpdGl2ZSgyKQpgYGAKCmBgYHtyfQpJc1Bvc2l0aXZlKC0yKQpgYGAKCmBgYHtyfQpJc1Bvc2l0aXZlKDApCmBgYAoKIyMjIEV4YW1wbGUKClRyeSB0byBjcmVhdGUgYSBmdW5jdGlvbiB0aGF0OgoKLSBUYWtlcyBhIG51bWJlciBhcyBhbiBhcmd1bWVudAotIFJldHVybnMgYFRSVUVgIGlmIHRoZSBhcmd1bWVudCBpcyBncmVhdGVyIHRoYW4gb3IgZXF1YWwgdG8gMTAKLSBSZXR1cm5zIGBGQUxTRWAgb3RoZXJ3aXNlCgpgYGB7cn0KIyBZT1VSIEZVTkNUSU9OIEdPRVMgSEVSRQpgYGAKCiMjIyBFeGFtcGxlCgpUcnkgdG8gY3JlYXRlIGEgZnVuY3Rpb24gdGhhdDoKCi0gVGFrZXMgYSB2ZWN0b3IgKGUuZy4gYGMoMSwyLDMsNClgKSBhcyBhbiBhcmd1bWVudAotIFJldHVybnMgYFRSVUVgIGlmIHRoZSB2ZWN0b3IgaXMgbG9uZ2VyIHRoYW4gNSBlbGVtZW50cwotIFJldHVybnMgYEZBTFNFYCBvdGhlcndpc2UKCkhpbnRzOgoKLSBVc2UgdGhlIGZ1bmN0aW9uIGBsZW5ndGgoKWAKCmBgYHtyfQojIFlPVVIgRlVOQ1RJT04gR09FUyBIRVJFCmBgYAoKIyMgU2VsZWN0aW5nIFBhcnRzIE9mIFlvdXIgRGF0YQoKRnVuY3Rpb25zIGNhbiBhbHNvIGJlIHVzZWQgdG8gcmV0dXJuIHBhcnRzIG9mIHlvdXIgZGF0YS4gRm9yIGV4YW1wbGUsIHdlIGNvdWxkIGNyZWF0ZSBhIGZ1bmN0aW9uIHRoYXQgb25seSByZXR1cm5zIHRoZSBwb3NpdGl2ZSB2YWx1ZXMgZnJvbSBhIHZlY3RvcjoKCmBgYHtyfQpQb3NpdGl2ZVZhbHVlcyA8LSBmdW5jdGlvbihhcmd1bWVudCl7CiAgcmV0dmFsIDwtIGFyZ3VtZW50W2FyZ3VtZW50PjBdCiAgCiAgcmV0dXJuKHJldHZhbCkKfQoKUG9zaXRpdmVWYWx1ZXMoYXJndW1lbnQ9YygtMiwzLC00LDYpKQpgYGAKClRoZXNlIHJldHVybmVkIHZhbHVlcyBjYW4gYmUgYXNzaWduZWQgdG8gbmV3IHZhcmlhYmxlcyBhbmQgdXNlZCBmdXJ0aGVyIGluIHlvdXIgY29kZToKCmBgYHtyfQpteVJldHVybmVkVmFsdWVzIDwtIFBvc2l0aXZlVmFsdWVzKGFyZ3VtZW50PWMoLTIsMywtNCw2KSkKCnByaW50KG15UmV0dXJuZWRWYWx1ZXMqMTApCmBgYAoKCiMjIyBFeGFtcGxlCgpUcnkgdG8gY3JlYXRlIGEgZnVuY3Rpb24gdGhhdDoKCi0gVGFrZXMgYSB2ZWN0b3IgKGUuZy4gYGMoLDEsMiwzLDQpYCkgYXMgYW4gYXJndW1lbnQKLSBSZXR1cm5zIHRoZSBudW1iZXIgb2YgcG9zaXRpdmUgdmFsdWVzCgpIaW50czoKCi0gVXNlIHRoZSBmdW5jdGlvbiBgbGVuZ3RoKClgCgpgYGB7cn0KIyBZT1VSIEZVTkNUSU9OIEdPRVMgSEVSRQpgYGAKCgoKCgo=</div>
 
 
 

@@ -40,9 +40,9 @@ As a simple example, we will now write our own function that takes two numbers a
 
 ```{r}
 Addition <- function(argument1, argument2){
-  retVal <- argument1 + argument2
+  retval <- argument1 + argument2
   
-  return(retVal)
+  return(retval)
 }
 
 Addition(3,5)
@@ -68,9 +68,9 @@ We can also create a function that adds three numbers together:
 
 ```{r}
 Addition3 <- function(argument1, argument2, argument3){
-  retVal <- argument1 + argument2 + argument3
+  retval <- argument1 + argument2 + argument3
   
-  return(retVal)
+  return(retval)
 }
 
 Addition3(3,5,7)
@@ -90,9 +90,9 @@ We can make the internal mechanisms of the functions more complicated. For examp
 
 ```{r}
 Add4ToValue <- function(argument){
-  retVal <- argument + 4
+  retval <- argument + 4
   
-  return(retVal)
+  return(retval)
 }
 
 Add4ToValue(3)
@@ -102,9 +102,9 @@ We can also reuse the function `Addition` that we created earlier:
 
 ```{r}
 Add4ToValue <- function(argument){
-  retVal <- Addition(argument, 4)
+  retval <- Addition(argument, 4)
   
-  return(retVal)
+  return(retval)
 }
 
 Add4ToValue(3)
@@ -196,9 +196,9 @@ Functions can also be used to return parts of your data. For example, we could c
 
 ```{r}
 PositiveValues <- function(argument){
-  retVal <- argument[argument>0]
+  retval <- argument[argument>0]
   
-  return(retVal)
+  return(retval)
 }
 
 PositiveValues(argument=c(-2,3,-4,6))
