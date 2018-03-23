@@ -7,109 +7,6 @@ editor_options:
   chunk_output_type: console
 ---
 
-In stata, we define variables like:
-
-```{}
-global MAX_DATE=3
-```
-
-In R we define them like this:
-
-```{r}
-MAX_DATE <- 3
-```
-
-In STATA, the entire dataset is like an excel sheet, and you can only have one up at the same time. In R, you can have multiple "datasets" up at the same time:
-
-```{r}
-data1 <- data.frame(x=c(1,2,3),y=c(3,4,5))
-data2 <- data.frame(x=c(10,20,30),y=c(30,40,50))
-
-print(data1)
-print(data2)
-```
-
-In stata, you refer to the variables of the open dataset. For example
-
-```
-gen bloodpressure=130
-```
-
-In R, you always need to refer to the dataset that you care about:
-
-```{r}
-data1$bloodpressure <- 130
-print(data1)
-print(data2)
-```
-
-# assigning a variable
-
-In stata, we assign variables by doing this:
-
-```
-gen var1 = "a"
-```
-
-In R, we assign variables by doing this:
-
-```{r}
-var1 <- "a"
-```
-
-This is nice, because it makes it easier to see the difference between "=" (assigning) and "==" (a question). In R, we have "<-" (assigning) and "==" (a question).
-
-# What kind of variables can we have?
-
-```{r}
-# character/string
-var1 <- "a"
-print(var1)
-
-# numeric
-var2 <- 3
-print(var2)
-
-# categorical/factors
-var3 <- factor(3,levels=c(1,2,3),labels=c("low","medium","high"))
-print(var3)
-
-var3 <- factor(2,levels=c(1,2,3),labels=c("low","medium","high"))
-print(var3)
-
-# applying a categorical/factor to a dataframe
-data1$overweight <- factor(NA, levels=c(1,2,3),labels=c("low","medium","high"))
-print(data1)
-# make the first woman overweight
-data1$overweight[1] <- "low"
-print(data1$overweight)
-print(data1)
-```
-
-
-# vectors!
-```{r}
-var <- c(10,20,30,40,50,50,60,70)
-print(var)
-
-# i want the value in the 6th position
-print(var[6])
-
-# i want to change the value in the 2nd position
-var[2] <- 1000
-print(var)
-
-# i want to change the value in the 1st position to 8
-var[1] <- 8
-
-# i want to make the 3rd value equal to the first value plus the second value
-var[3] <- var[1] + var[2]
-
-# i want to check that the 3rd value is equal to the first value plus the second value
-print(var[3]==var[1] + var[2])
-
-```
-
 # control flow statements
 
 In programs, we often want to change the flow of the program, depending on if certain things are true. We can use if statements to determine this.
@@ -196,13 +93,13 @@ print(neg)
 Task:
 
 - create a vector (called "A") containing -10, -9, ..., 9, 10
-- create a vector (called "B") containing 100, ..., 150
+- create a vector (called "B") containing 101, ..., 150
 - create two new vectors ("small" and "big") where "small" contains the shorter vector and "big" contains the longer vector
 
 
 ```{r}
 A = c(-10:10)
-B = c(100:150)
+B = c(101:150)
 
 if(length(A) < length(B)){
   small = A
@@ -212,30 +109,3 @@ if(length(A) < length(B)){
   big = A
 }
 ```
-
-Task:
-
-- create a vector (called "A") containing 1, ..., 10
-- create a vector (called "B") containing 101, ..., 110
-- create a data.frame (called "d") containing A and B as variables (columns)
-- create a data.frame (called "d5plus") from d, subsetted on where d$A>=5
-
-```{r}
-A = c(-10:10)
-B = c(100:150)
-
-if(length(A) < length(B)){
-  small = A
-  big = B
-} else {
-  small = B
-  big = A
-}
-
-
-
-```
-
-
-
-
