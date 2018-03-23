@@ -1,5 +1,7 @@
 ---
-title: "R Notebook"
+title: "03 If statements"
+author: "Richard White"
+date: "2018-03-23"
 output:
   html_document:
     df_print: paged

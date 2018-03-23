@@ -1,7 +1,7 @@
 ---
-title: "01 Functions"
+title: "06 Functions"
 author: "Richard White"
-date: "`r Sys.Date()`"
+date: "2018-03-23"
 output:
   html_document:
     df_print: paged
