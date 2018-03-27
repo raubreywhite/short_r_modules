@@ -6,6 +6,8 @@ output:
   html_document:
     df_print: paged
     code_download: TRUE
+editor_options: 
+  chunk_output_type: console
 ---
 
 ## Base R
@@ -41,11 +43,12 @@ As a simple example, we will now write our own function that takes two numbers a
 ```{r}
 Addition <- function(argument1, argument2){
   retval <- argument1 + argument2
-  
+  print(sprintf("my returned value is: %s",retval))
   return(retval)
 }
 
-Addition(3,5)
+myReturnedValue <- Addition(3,5)
+print(myReturnedValue)
 ```
 
 You can see that `Addition(3,5)` is in the format `function(argument1, argument2)`, which is the standard function format that you will be creating in R.
@@ -227,6 +230,7 @@ Hints:
 ```{r}
 # YOUR FUNCTION GOES HERE
 ```
+
 
 
 

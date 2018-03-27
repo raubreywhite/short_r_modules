@@ -42,12 +42,88 @@ Task:
 
 ```{r}
 A = c(1:10)
-B = c(101:150)
+B = c(101:110)
 
 d <- data.frame(A,B)
 d5plus <- d[d$A>=5,]
 print(d5plus)
 ```
+
+Task:
+
+- in the data.frame `d` rename the two variables/columns to `var1` and `var2`
+- hint, use the function `names()`
+
+```{r}
+names(d)
+names(d) <- c("var1", "var2")
+names(d)
+```
+
+Task:
+
+- in the data.frame `d` create a new variable/column called `var3` which is equal to 1 if `var1`<5 and equal to `var2` otherwise
+
+```{r}
+rowsThatIWant <- d$var1<5
+print(rowsThatIWant)
+
+d[rowsThatIWant,]
+
+d$var3 <- d$var2
+# here we are only operating with vectors
+d$var3[d$var1<5] <- 1
+
+# here we are working within the data.frame format
+d[d$var1<5,"var3"] <- 1
+
+# here we are working within the data.frame format, making it more general
+columnThatIWant <- "var3"
+d[rowsThatIWant,columnThatIWant] <- 1
+```
+
+Task:
+
+- create a data.frame `w` containing variables: `days of the week` (day) and `expected work hours` (expectedHours)
+
+```{r}
+days <- c("Mo","Tu","We","Th","Fr","Sa","Su")
+expectedHours <- c(8,8,8,8,0,0,8)
+# another way to create expectedHours (more efficent, using the function "rep")
+expectedHours <- c(rep(8,4),0,0,8)
+
+w <- data.frame("days"=days,"expectedHours"=expectedHours)
+```
+
+Task:
+
+- inside `w`, create a new variable called `workedHours` and initialize it to `NA`
+
+```{r}
+w$workedHours <- NA
+```
+
+Task:
+
+- inside `w`, set workedHours on Monday to 9
+
+```{r}
+# least generic
+w$workedHours[1] <- 9
+
+# bit more generic
+dayThatIsMonday <- w$days=="Mo"
+w$workedHours[dayThatIsMonday] <- 9
+
+# data.frame style i.e. w[row,column]
+w[dayThatIsMonday, "workedHours"] <- 9
+
+# most generic data.frame style i.e. w[row,column]
+columnThatIWant <- "workedHours"
+w[dayThatIsMonday, columnThatIWant] <- 9
+
+```
+
 
 
 

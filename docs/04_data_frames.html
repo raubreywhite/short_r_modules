@@ -164,7 +164,7 @@ print(data1)</code></pre>
 <li>create a data.frame (called “d5plus”) from d, subsetted on where d$A&gt;=5</li>
 </ul>
 <pre class="r"><code>A = c(1:10)
-B = c(101:150)
+B = c(101:110)
 
 d &lt;- data.frame(A,B)
 d5plus &lt;- d[d$A&gt;=5,]
@@ -175,31 +175,72 @@ print(d5plus)</code></pre>
 ## 7   7 107
 ## 8   8 108
 ## 9   9 109
-## 10 10 110
-## 15  5 115
-## 16  6 116
-## 17  7 117
-## 18  8 118
-## 19  9 119
-## 20 10 120
-## 25  5 125
-## 26  6 126
-## 27  7 127
-## 28  8 128
-## 29  9 129
-## 30 10 130
-## 35  5 135
-## 36  6 136
-## 37  7 137
-## 38  8 138
-## 39  9 139
-## 40 10 140
-## 45  5 145
-## 46  6 146
-## 47  7 147
-## 48  8 148
-## 49  9 149
-## 50 10 150</code></pre>
+## 10 10 110</code></pre>
+<p>Task:</p>
+<ul>
+<li>in the data.frame <code>d</code> rename the two variables/columns to <code>var1</code> and <code>var2</code></li>
+<li>hint, use the function <code>names()</code></li>
+</ul>
+<pre class="r"><code>names(d)</code></pre>
+<pre><code>## [1] &quot;A&quot; &quot;B&quot;</code></pre>
+<pre class="r"><code>names(d) &lt;- c(&quot;var1&quot;, &quot;var2&quot;)
+names(d)</code></pre>
+<pre><code>## [1] &quot;var1&quot; &quot;var2&quot;</code></pre>
+<p>Task:</p>
+<ul>
+<li>in the data.frame <code>d</code> create a new variable/column called <code>var3</code> which is equal to 1 if <code>var1</code>&lt;5 and equal to <code>var2</code> otherwise</li>
+</ul>
+<pre class="r"><code>rowsThatIWant &lt;- d$var1&lt;5
+print(rowsThatIWant)</code></pre>
+<pre><code>##  [1]  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
+<pre class="r"><code>d[rowsThatIWant,]</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["var1"],"name":[1],"type":["int"],"align":["right"]},{"label":["var2"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"1","2":"101","_rn_":"1"},{"1":"2","2":"102","_rn_":"2"},{"1":"3","2":"103","_rn_":"3"},{"1":"4","2":"104","_rn_":"4"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<pre class="r"><code>d$var3 &lt;- d$var2
+# here we are only operating with vectors
+d$var3[d$var1&lt;5] &lt;- 1
+
+# here we are working within the data.frame format
+d[d$var1&lt;5,&quot;var3&quot;] &lt;- 1
+
+# here we are working within the data.frame format, making it more general
+columnThatIWant &lt;- &quot;var3&quot;
+d[rowsThatIWant,columnThatIWant] &lt;- 1</code></pre>
+<p>Task:</p>
+<ul>
+<li>create a data.frame <code>w</code> containing variables: <code>days of the week</code> (day) and <code>expected work hours</code> (expectedHours)</li>
+</ul>
+<pre class="r"><code>days &lt;- c(&quot;Mo&quot;,&quot;Tu&quot;,&quot;We&quot;,&quot;Th&quot;,&quot;Fr&quot;,&quot;Sa&quot;,&quot;Su&quot;)
+expectedHours &lt;- c(8,8,8,8,0,0,8)
+# another way to create expectedHours (more efficent, using the function &quot;rep&quot;)
+expectedHours &lt;- c(rep(8,4),0,0,8)
+
+w &lt;- data.frame(&quot;days&quot;=days,&quot;expectedHours&quot;=expectedHours)</code></pre>
+<p>Task:</p>
+<ul>
+<li>inside <code>w</code>, create a new variable called <code>workedHours</code> and initialize it to <code>NA</code></li>
+</ul>
+<pre class="r"><code>w$workedHours &lt;- NA</code></pre>
+<p>Task:</p>
+<ul>
+<li>inside <code>w</code>, set workedHours on Monday to 9</li>
+</ul>
+<pre class="r"><code># least generic
+w$workedHours[1] &lt;- 9
+
+# bit more generic
+dayThatIsMonday &lt;- w$days==&quot;Mo&quot;
+w$workedHours[dayThatIsMonday] &lt;- 9
+
+# data.frame style i.e. w[row,column]
+w[dayThatIsMonday, &quot;workedHours&quot;] &lt;- 9
+
+# most generic data.frame style i.e. w[row,column]
+columnThatIWant &lt;- &quot;workedHours&quot;
+w[dayThatIsMonday, columnThatIWant] &lt;- 9</code></pre>
 
 
 

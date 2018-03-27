@@ -128,215 +128,93 @@ $(document).ready(function () {
 </div>
 
 
-<p>In stata, we define variables like:</p>
-<pre><code>global MAX_DATE=3</code></pre>
-<p>In R we define them like this:</p>
-<pre class="r"><code>MAX_DATE &lt;- 3</code></pre>
-<p>In STATA, the entire dataset is like an excel sheet, and you can only have one up at the same time. In R, you can have multiple “datasets” up at the same time:</p>
-<pre class="r"><code>data1 &lt;- data.frame(x=c(1,2,3),y=c(3,4,5))
-data2 &lt;- data.frame(x=c(10,20,30),y=c(30,40,50))
-
-print(data1)</code></pre>
-<pre><code>##   x y
-## 1 1 3
-## 2 2 4
-## 3 3 5</code></pre>
-<pre class="r"><code>print(data2)</code></pre>
-<pre><code>##    x  y
-## 1 10 30
-## 2 20 40
-## 3 30 50</code></pre>
-<p>In stata, you refer to the variables of the open dataset. For example</p>
-<pre><code>gen bloodpressure=130</code></pre>
-<p>In R, you always need to refer to the dataset that you care about:</p>
-<pre class="r"><code>data1$bloodpressure &lt;- 130
-print(data1)</code></pre>
-<pre><code>##   x y bloodpressure
-## 1 1 3           130
-## 2 2 4           130
-## 3 3 5           130</code></pre>
-<pre class="r"><code>print(data2)</code></pre>
-<pre><code>##    x  y
-## 1 10 30
-## 2 20 40
-## 3 30 50</code></pre>
-<div id="assigning-a-variable" class="section level1">
-<h1>assigning a variable</h1>
-<p>In stata, we assign variables by doing this:</p>
-<pre><code>gen var1 = &quot;a&quot;</code></pre>
-<p>In R, we assign variables by doing this:</p>
-<pre class="r"><code>var1 &lt;- &quot;a&quot;</code></pre>
-<p>This is nice, because it makes it easier to see the difference between “=” (assigning) and “==” (a question). In R, we have “&lt;-” (assigning) and “==” (a question).</p>
-</div>
-<div id="what-kind-of-variables-can-we-have" class="section level1">
-<h1>What kind of variables can we have?</h1>
-<pre class="r"><code># character/string
-var1 &lt;- &quot;a&quot;
-print(var1)</code></pre>
-<pre><code>## [1] &quot;a&quot;</code></pre>
-<pre class="r"><code># numeric
-var2 &lt;- 3
-print(var2)</code></pre>
-<pre><code>## [1] 3</code></pre>
-<pre class="r"><code># categorical/factors
-var3 &lt;- factor(3,levels=c(1,2,3),labels=c(&quot;low&quot;,&quot;medium&quot;,&quot;high&quot;))
-print(var3)</code></pre>
-<pre><code>## [1] high
-## Levels: low medium high</code></pre>
-<pre class="r"><code>var3 &lt;- factor(2,levels=c(1,2,3),labels=c(&quot;low&quot;,&quot;medium&quot;,&quot;high&quot;))
-print(var3)</code></pre>
-<pre><code>## [1] medium
-## Levels: low medium high</code></pre>
-<pre class="r"><code># applying a categorical/factor to a dataframe
-data1$overweight &lt;- factor(NA, levels=c(1,2,3),labels=c(&quot;low&quot;,&quot;medium&quot;,&quot;high&quot;))
-print(data1)</code></pre>
-<pre><code>##   x y bloodpressure overweight
-## 1 1 3           130       &lt;NA&gt;
-## 2 2 4           130       &lt;NA&gt;
-## 3 3 5           130       &lt;NA&gt;</code></pre>
-<pre class="r"><code># make the first woman overweight
-data1$overweight[1] &lt;- &quot;low&quot;
-print(data1$overweight)</code></pre>
-<pre><code>## [1] low  &lt;NA&gt; &lt;NA&gt;
-## Levels: low medium high</code></pre>
-<pre class="r"><code>print(data1)</code></pre>
-<pre><code>##   x y bloodpressure overweight
-## 1 1 3           130        low
-## 2 2 4           130       &lt;NA&gt;
-## 3 3 5           130       &lt;NA&gt;</code></pre>
-</div>
-<div id="vectors" class="section level1">
-<h1>vectors!</h1>
-<pre class="r"><code>var &lt;- c(10,20,30,40,50,50,60,70)
-print(var)</code></pre>
-<pre><code>## [1] 10 20 30 40 50 50 60 70</code></pre>
-<pre class="r"><code># i want the value in the 6th position
-print(var[6])</code></pre>
-<pre><code>## [1] 50</code></pre>
-<pre class="r"><code># i want to change the value in the 2nd position
-var[2] &lt;- 1000
-print(var)</code></pre>
-<pre><code>## [1]   10 1000   30   40   50   50   60   70</code></pre>
-<pre class="r"><code># i want to change the value in the 1st position to 8
-var[1] &lt;- 8
-
-# i want to make the 3rd value equal to the first value plus the second value
-var[3] &lt;- var[1] + var[2]
-
-# i want to check that the 3rd value is equal to the first value plus the second value
-print(var[3]==var[1] + var[2])</code></pre>
-<pre><code>## [1] TRUE</code></pre>
-</div>
-<div id="control-flow-statements" class="section level1">
-<h1>control flow statements</h1>
-<p>In programs, we often want to change the flow of the program, depending on if certain things are true. We can use if statements to determine this.</p>
-<pre class="r"><code>a = 3
-if(a==6){
-  print(&quot;a is 6&quot;)
-} else {
-  print(&quot;a is not 6&quot;)
+<p>STATA:</p>
+<pre><code>forvalues X=1/5 {
+  display `X'
 }</code></pre>
-<pre><code>## [1] &quot;a is not 6&quot;</code></pre>
-<p>Task:</p>
-<ul>
-<li>create a vector (called “d”) containing 1, 2, 3, 4, 5</li>
-<li>find out the length of d (using <code>length</code>) (“how many post boxes we have”)</li>
-<li>if the length of “d” is less than 3, print “short”, otherwise print “long”</li>
-</ul>
-<pre class="r"><code>d = c(1,2,3,4,5)
-# OR
-d = c(1:5)
-
-print(length(d))</code></pre>
-<pre><code>## [1] 5</code></pre>
-<pre class="r"><code>if(length(d)&lt;3){
-  print(&quot;short&quot;)
-} else {
-  print(&quot;long&quot;)
+<pre class="r"><code>for(i in c(1:5)){
+  print(i)
 }</code></pre>
-<pre><code>## [1] &quot;long&quot;</code></pre>
+<pre><code>## [1] 1
+## [1] 2
+## [1] 3
+## [1] 4
+## [1] 5</code></pre>
 <p>Task:</p>
 <ul>
-<li>create a vector (called “d”) containing 1, 2, 3, 4, 5</li>
-<li>find out the length of d (using <code>length</code>) (“how many post boxes we have”)</li>
-<li>if the length of “d” is less than 3, print “short”, if the length of “d” is between 3 and 7 (inclusive) print “medium”, otherwise print “long”</li>
-<li>HINT: use “else if”</li>
+<li>Create a vector containing some names</li>
+<li>Loop through the vector and print them all UPPERCASE using function <code>toupper()</code></li>
 </ul>
-<pre class="r"><code>d = c(1,2,3,4,5)
-# OR
-d = c(1:5)
+<pre class="r"><code>myNames &lt;- c(&quot;richArd&quot;,&quot;Tamara&quot;,&quot;hello&quot;,&quot;HILdE&quot;)
 
-print(length(d))</code></pre>
-<pre><code>## [1] 5</code></pre>
-<pre class="r"><code>if(length(d)&lt;3){
-  print(&quot;short&quot;)
-} else if(length(d)&lt;7){
-  print(&quot;medium&quot;)
-} else {
-  print(&quot;long&quot;)
+for(name in myNames){
+  print(toupper(name))
 }</code></pre>
-<pre><code>## [1] &quot;medium&quot;</code></pre>
-</div>
-<div id="subsetting-data" class="section level1">
-<h1>subsetting data</h1>
+<pre><code>## [1] &quot;RICHARD&quot;
+## [1] &quot;TAMARA&quot;
+## [1] &quot;HELLO&quot;
+## [1] &quot;HILDE&quot;</code></pre>
+<pre class="r"><code>for(i in c(1:4)){
+  print(i)
+}</code></pre>
+<pre><code>## [1] 1
+## [1] 2
+## [1] 3
+## [1] 4</code></pre>
 <p>Task:</p>
 <ul>
-<li>create a vector (called “d”) containing -10, -9, …, 9, 10</li>
-<li>create a new vector from “d” (called “pos”) containing the values 1, …, 10</li>
+<li>Create a vector containing some names</li>
+<li>Loop through the vector and print them all UPPERCASE using function <code>toupper()</code></li>
 </ul>
-<pre class="r"><code>d = c(-10:10)
-print(d&gt;0)</code></pre>
-<pre><code>##  [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-## [12]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE</code></pre>
-<pre class="r"><code>pos = d[d&gt;0]
-print(pos)</code></pre>
-<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
-<p>Task:</p>
-<ul>
-<li>create a vector (called “d”) containing -10, -9, …, 9, 10</li>
-<li>create a new vector from “d” (called “neg”) containing the values -10, …, -1</li>
-</ul>
-<pre class="r"><code>d = c(-10:10)
-print(d&lt;0)</code></pre>
-<pre><code>##  [1]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE
-## [12] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
-<pre class="r"><code>neg = d[d&lt;0]
-print(neg)</code></pre>
-<pre><code>##  [1] -10  -9  -8  -7  -6  -5  -4  -3  -2  -1</code></pre>
-<p>Task:</p>
-<ul>
-<li>create a vector (called “A”) containing -10, -9, …, 9, 10</li>
-<li>create a vector (called “B”) containing 100, …, 150</li>
-<li>create two new vectors (“small” and “big”) where “small” contains the shorter vector and “big” contains the longer vector</li>
-</ul>
-<pre class="r"><code>A = c(-10:10)
-B = c(100:150)
+<pre class="r"><code>myNames &lt;- c(&quot;richArd&quot;,&quot;Tamara&quot;,&quot;hello&quot;,&quot;HILdE&quot;)
 
-if(length(A) &lt; length(B)){
-  small = A
-  big = B
-} else {
-  small = B
-  big = A
+for(name in myNames){
+  print(name)
 }</code></pre>
+<pre><code>## [1] &quot;richArd&quot;
+## [1] &quot;Tamara&quot;
+## [1] &quot;hello&quot;
+## [1] &quot;HILdE&quot;</code></pre>
+<pre class="r"><code>for(i in 1:length(myNames)){
+  print(toupper(myNames[i]))
+}</code></pre>
+<pre><code>## [1] &quot;RICHARD&quot;
+## [1] &quot;TAMARA&quot;
+## [1] &quot;HELLO&quot;
+## [1] &quot;HILDE&quot;</code></pre>
+<pre class="r"><code>for(i in 1:length(myNames)){
+  print(sprintf(&quot;Name #%s is %s&quot;,i,toupper(myNames[i])))
+}</code></pre>
+<pre><code>## [1] &quot;Name #1 is RICHARD&quot;
+## [1] &quot;Name #2 is TAMARA&quot;
+## [1] &quot;Name #3 is HELLO&quot;
+## [1] &quot;Name #4 is HILDE&quot;</code></pre>
 <p>Task:</p>
 <ul>
-<li>create a vector (called “A”) containing 1, …, 10</li>
-<li>create a vector (called “B”) containing 101, …, 110</li>
-<li>create a data.frame (called “d”) containing A and B as variables (columns)</li>
-<li>create a data.frame (called “d5plus”) from d, subsetted on where d$A&gt;=5</li>
+<li>add in last names</li>
 </ul>
-<pre class="r"><code>A = c(-10:10)
-B = c(100:150)
+<pre class="r"><code>lastNames &lt;- c(&quot;lastname1&quot;,&quot;lastname2&quot;,&quot;lastname3&quot;,&quot;lastname4&quot;)
 
-if(length(A) &lt; length(B)){
-  small = A
-  big = B
-} else {
-  small = B
-  big = A
+for(i in 1:length(myNames)){
+  print(sprintf(&quot;Name #%s is %s %s&quot;,i,toupper(myNames[i]),toupper(lastNames[i])))
 }</code></pre>
-</div>
+<pre><code>## [1] &quot;Name #1 is RICHARD LASTNAME1&quot;
+## [1] &quot;Name #2 is TAMARA LASTNAME2&quot;
+## [1] &quot;Name #3 is HELLO LASTNAME3&quot;
+## [1] &quot;Name #4 is HILDE LASTNAME4&quot;</code></pre>
+<p>Task:</p>
+<ul>
+<li>Do the same as above, but in a data.frame</li>
+</ul>
+<pre class="r"><code>d &lt;- data.frame(myNames,lastNames)
+
+for(i in 1:nrow(d)){
+  print(sprintf(&quot;Name #%s is %s %s&quot;,i,toupper(d$myNames[i]),toupper(d$lastNames[i])))
+}</code></pre>
+<pre><code>## [1] &quot;Name #1 is RICHARD LASTNAME1&quot;
+## [1] &quot;Name #2 is TAMARA LASTNAME2&quot;
+## [1] &quot;Name #3 is HELLO LASTNAME3&quot;
+## [1] &quot;Name #4 is HILDE LASTNAME4&quot;</code></pre>
 
 
 
